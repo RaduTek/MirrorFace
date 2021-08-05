@@ -29,82 +29,88 @@ namespace MirrorFakePerson
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
+            this.mirrorRightImage = new System.Windows.Forms.PictureBox();
+            this.mirrorLeftImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.sourceImage = new System.Windows.Forms.PictureBox();
+            this.commandPanel = new System.Windows.Forms.Panel();
+            this.pasteBtn = new System.Windows.Forms.Button();
+            this.loadLocalBtn = new System.Windows.Forms.Button();
+            this.loadGeneratedBtn = new System.Windows.Forms.Button();
+            this.centerPosTrack = new System.Windows.Forms.TrackBar();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.aboutBtn = new System.Windows.Forms.Button();
+            this.layoutTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mirrorRightImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mirrorLeftImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sourceImage)).BeginInit();
+            this.commandPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.centerPosTrack)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // layoutTable
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 13);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1258, 487);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.layoutTable.ColumnCount = 3;
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.layoutTable.Controls.Add(this.mirrorRightImage, 2, 1);
+            this.layoutTable.Controls.Add(this.mirrorLeftImage, 1, 1);
+            this.layoutTable.Controls.Add(this.label1, 0, 0);
+            this.layoutTable.Controls.Add(this.label2, 1, 0);
+            this.layoutTable.Controls.Add(this.label3, 2, 0);
+            this.layoutTable.Controls.Add(this.sourceImage, 0, 1);
+            this.layoutTable.Controls.Add(this.commandPanel, 0, 3);
+            this.layoutTable.Controls.Add(this.centerPosTrack, 0, 2);
+            this.layoutTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutTable.Location = new System.Drawing.Point(13, 10);
+            this.layoutTable.Margin = new System.Windows.Forms.Padding(2);
+            this.layoutTable.Name = "layoutTable";
+            this.layoutTable.RowCount = 4;
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.layoutTable.Size = new System.Drawing.Size(1006, 425);
+            this.layoutTable.TabIndex = 0;
             // 
-            // pictureBox3
+            // mirrorRightImage
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(850, 34);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(396, 395);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
+            this.mirrorRightImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.mirrorRightImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.mirrorRightImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mirrorRightImage.Location = new System.Drawing.Point(680, 28);
+            this.mirrorRightImage.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.mirrorRightImage.Name = "mirrorRightImage";
+            this.mirrorRightImage.Size = new System.Drawing.Size(316, 315);
+            this.mirrorRightImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.mirrorRightImage.TabIndex = 6;
+            this.mirrorRightImage.TabStop = false;
             // 
-            // pictureBox2
+            // mirrorLeftImage
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(431, 34);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(395, 395);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.mirrorLeftImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.mirrorLeftImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.mirrorLeftImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mirrorLeftImage.Location = new System.Drawing.Point(345, 28);
+            this.mirrorLeftImage.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.mirrorLeftImage.Name = "mirrorLeftImage";
+            this.mirrorLeftImage.Size = new System.Drawing.Size(315, 315);
+            this.mirrorLeftImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.mirrorLeftImage.TabIndex = 5;
+            this.mirrorLeftImage.TabStop = false;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(162, 3);
+            this.label1.Location = new System.Drawing.Point(128, 2);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.Size = new System.Drawing.Size(79, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Source Image";
             // 
@@ -112,9 +118,10 @@ namespace MirrorFakePerson
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(584, 3);
+            this.label2.Location = new System.Drawing.Point(464, 2);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.Size = new System.Drawing.Size(76, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mirrored Left";
             // 
@@ -122,112 +129,145 @@ namespace MirrorFakePerson
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(999, 3);
+            this.label3.Location = new System.Drawing.Point(796, 2);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Mirrored Right";
             // 
-            // pictureBox1
+            // sourceImage
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(395, 395);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.sourceImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.sourceImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sourceImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sourceImage.Location = new System.Drawing.Point(10, 28);
+            this.sourceImage.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.sourceImage.Name = "sourceImage";
+            this.sourceImage.Size = new System.Drawing.Size(315, 315);
+            this.sourceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.sourceImage.TabIndex = 4;
+            this.sourceImage.TabStop = false;
             // 
-            // panel1
+            // commandPanel
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panel1, 3);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 441);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1252, 44);
-            this.panel1.TabIndex = 8;
+            this.layoutTable.SetColumnSpan(this.commandPanel, 3);
+            this.commandPanel.Controls.Add(this.aboutBtn);
+            this.commandPanel.Controls.Add(this.pasteBtn);
+            this.commandPanel.Controls.Add(this.loadLocalBtn);
+            this.commandPanel.Controls.Add(this.loadGeneratedBtn);
+            this.commandPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.commandPanel.Location = new System.Drawing.Point(2, 387);
+            this.commandPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.commandPanel.Name = "commandPanel";
+            this.commandPanel.Size = new System.Drawing.Size(1002, 36);
+            this.commandPanel.TabIndex = 8;
             // 
-            // button3
+            // pasteBtn
             // 
-            this.button3.Location = new System.Drawing.Point(421, 6);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Paste Image";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.pasteBtn.Location = new System.Drawing.Point(295, 5);
+            this.pasteBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.pasteBtn.Name = "pasteBtn";
+            this.pasteBtn.Size = new System.Drawing.Size(140, 26);
+            this.pasteBtn.TabIndex = 8;
+            this.pasteBtn.Text = "Paste Image";
+            this.pasteBtn.UseVisualStyleBackColor = true;
+            this.pasteBtn.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // loadLocalBtn
             // 
-            this.button2.Location = new System.Drawing.Point(215, 6);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 32);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Load Local Image ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.loadLocalBtn.Location = new System.Drawing.Point(151, 5);
+            this.loadLocalBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loadLocalBtn.Name = "loadLocalBtn";
+            this.loadLocalBtn.Size = new System.Drawing.Size(140, 26);
+            this.loadLocalBtn.TabIndex = 7;
+            this.loadLocalBtn.Text = "Load Local Image ";
+            this.loadLocalBtn.UseVisualStyleBackColor = true;
+            this.loadLocalBtn.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // loadGeneratedBtn
             // 
-            this.button1.Location = new System.Drawing.Point(9, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Load Generated Image ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.loadGeneratedBtn.Location = new System.Drawing.Point(7, 5);
+            this.loadGeneratedBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.loadGeneratedBtn.Name = "loadGeneratedBtn";
+            this.loadGeneratedBtn.Size = new System.Drawing.Size(140, 26);
+            this.loadGeneratedBtn.TabIndex = 0;
+            this.loadGeneratedBtn.Text = "Load Generated Image ";
+            this.loadGeneratedBtn.UseVisualStyleBackColor = true;
+            this.loadGeneratedBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // openFileDialog1
+            // centerPosTrack
             // 
-            this.openFileDialog1.Filter = "Image Files|*.png;*.jpeg;*.jpg;*.gif;*.bmp";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.centerPosTrack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerPosTrack.Enabled = false;
+            this.centerPosTrack.Location = new System.Drawing.Point(3, 354);
+            this.centerPosTrack.Maximum = 9;
+            this.centerPosTrack.Minimum = 1;
+            this.centerPosTrack.Name = "centerPosTrack";
+            this.centerPosTrack.Size = new System.Drawing.Size(329, 28);
+            this.centerPosTrack.TabIndex = 9;
+            this.centerPosTrack.TickFrequency = 10;
+            this.centerPosTrack.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.centerPosTrack.Value = 5;
+            this.centerPosTrack.Scroll += new System.EventHandler(this.centerPosTrack_Scroll);
+            this.centerPosTrack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.centerPosTrack_MouseDown);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "Image Files|*.png;*.jpeg;*.jpg;*.gif;*.bmp";
+            this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // aboutBtn
+            // 
+            this.aboutBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.aboutBtn.Location = new System.Drawing.Point(894, 5);
+            this.aboutBtn.Name = "aboutBtn";
+            this.aboutBtn.Size = new System.Drawing.Size(100, 26);
+            this.aboutBtn.TabIndex = 9;
+            this.aboutBtn.Text = "About";
+            this.aboutBtn.UseVisualStyleBackColor = true;
+            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1290, 513);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClientSize = new System.Drawing.Size(1032, 445);
+            this.Controls.Add(this.layoutTable);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(16, 13, 16, 13);
+            this.Padding = new System.Windows.Forms.Padding(13, 10, 13, 10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mirror Fake Person";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.layoutTable.ResumeLayout(false);
+            this.layoutTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mirrorRightImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mirrorLeftImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sourceImage)).EndInit();
+            this.commandPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.centerPosTrack)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel layoutTable;
+        private System.Windows.Forms.Button loadGeneratedBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox mirrorRightImage;
+        private System.Windows.Forms.PictureBox mirrorLeftImage;
+        private System.Windows.Forms.PictureBox sourceImage;
+        private System.Windows.Forms.Button loadLocalBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Panel commandPanel;
+        private System.Windows.Forms.Button pasteBtn;
+        private System.Windows.Forms.TrackBar centerPosTrack;
+        private System.Windows.Forms.Button aboutBtn;
     }
 }
 

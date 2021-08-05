@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
 
@@ -17,73 +18,120 @@ namespace MirrorFakePerson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pictureBox1.Load("https://thispersondoesnotexist.com/image");
+            sourceImage.Load("https://thispersondoesnotexist.com/image");
 
-            FlipImages();
-        }
-
-        private void FlipImages()
-        {
-            pictureBox2.Image = (Image)pictureBox1.Image.Clone();
-            pictureBox3.Image = (Image)pictureBox1.Image.Clone();
-
-            flip1(pictureBox2.Image);
-            flip2(pictureBox3.Image);
-        }
-
-        private void flip1(Image i)
-        {
-            Graphics g = Graphics.FromImage(i);
-
-            Bitmap b1 = new Bitmap(i);
-
-            Rectangle source = new Rectangle(0, 0, i.Width / 2, i.Height);
-            Rectangle dest = new Rectangle(i.Width / 2, 0, i.Width / 2, i.Height);
-
-            Bitmap b2 = b1.Clone(source, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
-
-            g.DrawImage(b2, dest);
-        }
-
-        private void flip2(Image i)
-        {
-            Graphics g = Graphics.FromImage(i);
-
-            Bitmap b1 = new Bitmap(i);
-
-            Rectangle source = new Rectangle(i.Width / 2, 0, i.Width / 2, i.Height);
-            Rectangle dest = new Rectangle(0, 0, i.Width / 2, i.Height);
-
-            Bitmap b2 = b1.Clone(source, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-            b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
-
-            g.DrawImage(b2, dest);
+            LoadImages();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            openFileDialog.ShowDialog();
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
-            pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            sourceImage.Image = Image.FromFile(openFileDialog.FileName);
 
-            FlipImages();
+            LoadImages();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             if (Clipboard.ContainsImage())
             {
-                pictureBox1.Image = Clipboard.GetImage();
+                sourceImage.Image = Clipboard.GetImage();
 
-                FlipImages();
-            } else
+                LoadImages();
+            }
+            else
             {
                 MessageBox.Show(this, "Clipboard data is not an image.", "Error pasting image", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void centerPosTrack_Scroll(object sender, EventArgs e)
+        {
+            FlipImages();
+        }
+
+        private void centerPosTrack_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                centerPosTrack.Maximum = sourceImage.Image.Width;
+                centerPosTrack.Value = centerPosTrack.Maximum / 2;
+
+                FlipImages();
+            }
+        }
+
+        private void LoadImages()
+        {
+            centerPosTrack.Enabled = true;
+            centerPosTrack.Maximum = sourceImage.Image.Width;
+            centerPosTrack.Value = centerPosTrack.Maximum / 2;
+
+            FlipImages();
+        }
+
+        private void FlipImages()
+        {
+            mirrorLeftImage.Image = (Image)sourceImage.Image.Clone();
+            mirrorRightImage.Image = (Image)sourceImage.Image.Clone();
+
+            flip1();
+            flip2();
+        }
+
+        private void flip1()
+        {
+            int sliceWidth = centerPosTrack.Value;
+            int sourceHeight = sourceImage.Image.Height;
+
+            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, PixelFormat.Format32bppArgb);
+            mirrorLeftImage.Image = b;
+
+            Graphics g = Graphics.FromImage(mirrorLeftImage.Image);
+
+            Bitmap b1 = new Bitmap(sourceImage.Image);
+
+            Rectangle source = new Rectangle(0, 0, sliceWidth, sourceHeight);
+            Rectangle dest = new Rectangle(sliceWidth, 0, sliceWidth, sourceHeight);
+
+            Bitmap b2 = b1.Clone(source, PixelFormat.Format32bppArgb);
+            b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
+
+            g.DrawImage(b1, source, source, GraphicsUnit.Pixel);
+            g.DrawImage(b2, dest, source, GraphicsUnit.Pixel);
+        }
+
+        private void flip2()
+        {
+            int sliceWidth = sourceImage.Image.Width - centerPosTrack.Value;
+            int sourceHeight = sourceImage.Image.Height;
+
+            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, PixelFormat.Format32bppArgb);
+            mirrorRightImage.Image = b;
+
+            Graphics g = Graphics.FromImage(mirrorRightImage.Image);
+
+            Bitmap b1 = new Bitmap(sourceImage.Image);
+            b1.RotateFlip(RotateFlipType.RotateNoneFlipX);
+
+            Rectangle source = new Rectangle(0, 0, sliceWidth, sourceHeight);
+            Rectangle dest = new Rectangle(sliceWidth, 0, sliceWidth, sourceHeight);
+
+            Bitmap b2 = b1.Clone(source, PixelFormat.Format32bppArgb);
+            b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
+
+            g.DrawImage(b1, source, source, GraphicsUnit.Pixel);
+            g.DrawImage(b2, dest, source, GraphicsUnit.Pixel);
+        }
+
+        private void aboutBtn_Click(object sender, EventArgs e)
+        {
+            AboutDialog aboutDialog = new AboutDialog();
+            aboutDialog.ShowDialog();
         }
     }
 }
