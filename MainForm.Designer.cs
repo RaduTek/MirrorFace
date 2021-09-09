@@ -30,6 +30,7 @@ namespace MirrorFakePerson
         private void InitializeComponent()
         {
             this.layoutTable = new System.Windows.Forms.TableLayoutPanel();
+            this.copyMirrorRightBtn = new System.Windows.Forms.Button();
             this.mirrorRightImage = new System.Windows.Forms.PictureBox();
             this.mirrorLeftImage = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,12 +38,13 @@ namespace MirrorFakePerson
             this.label3 = new System.Windows.Forms.Label();
             this.sourceImage = new System.Windows.Forms.PictureBox();
             this.commandPanel = new System.Windows.Forms.Panel();
+            this.aboutBtn = new System.Windows.Forms.Button();
             this.pasteBtn = new System.Windows.Forms.Button();
             this.loadLocalBtn = new System.Windows.Forms.Button();
             this.loadGeneratedBtn = new System.Windows.Forms.Button();
             this.centerPosTrack = new System.Windows.Forms.TrackBar();
+            this.copyMirrorLeftBtn = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.aboutBtn = new System.Windows.Forms.Button();
             this.layoutTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mirrorRightImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mirrorLeftImage)).BeginInit();
@@ -57,6 +59,7 @@ namespace MirrorFakePerson
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.layoutTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.layoutTable.Controls.Add(this.copyMirrorRightBtn, 2, 2);
             this.layoutTable.Controls.Add(this.mirrorRightImage, 2, 1);
             this.layoutTable.Controls.Add(this.mirrorLeftImage, 1, 1);
             this.layoutTable.Controls.Add(this.label1, 0, 0);
@@ -65,27 +68,39 @@ namespace MirrorFakePerson
             this.layoutTable.Controls.Add(this.sourceImage, 0, 1);
             this.layoutTable.Controls.Add(this.commandPanel, 0, 3);
             this.layoutTable.Controls.Add(this.centerPosTrack, 0, 2);
+            this.layoutTable.Controls.Add(this.copyMirrorLeftBtn, 1, 2);
             this.layoutTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutTable.Location = new System.Drawing.Point(13, 10);
+            this.layoutTable.Location = new System.Drawing.Point(16, 12);
             this.layoutTable.Margin = new System.Windows.Forms.Padding(2);
             this.layoutTable.Name = "layoutTable";
             this.layoutTable.RowCount = 4;
-            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.layoutTable.Size = new System.Drawing.Size(1006, 425);
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.layoutTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.layoutTable.Size = new System.Drawing.Size(1258, 532);
             this.layoutTable.TabIndex = 0;
+            // 
+            // copyMirrorRightBtn
+            // 
+            this.copyMirrorRightBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.copyMirrorRightBtn.Location = new System.Drawing.Point(960, 445);
+            this.copyMirrorRightBtn.Name = "copyMirrorRightBtn";
+            this.copyMirrorRightBtn.Size = new System.Drawing.Size(175, 32);
+            this.copyMirrorRightBtn.TabIndex = 11;
+            this.copyMirrorRightBtn.Text = "Copy Image";
+            this.copyMirrorRightBtn.UseVisualStyleBackColor = true;
+            this.copyMirrorRightBtn.Click += new System.EventHandler(this.copyMirrorRightBtn_Click);
             // 
             // mirrorRightImage
             // 
             this.mirrorRightImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.mirrorRightImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.mirrorRightImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mirrorRightImage.Location = new System.Drawing.Point(680, 28);
-            this.mirrorRightImage.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.mirrorRightImage.Location = new System.Drawing.Point(850, 35);
+            this.mirrorRightImage.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
             this.mirrorRightImage.Name = "mirrorRightImage";
-            this.mirrorRightImage.Size = new System.Drawing.Size(316, 315);
+            this.mirrorRightImage.Size = new System.Drawing.Size(396, 395);
             this.mirrorRightImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mirrorRightImage.TabIndex = 6;
             this.mirrorRightImage.TabStop = false;
@@ -95,10 +110,10 @@ namespace MirrorFakePerson
             this.mirrorLeftImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.mirrorLeftImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.mirrorLeftImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mirrorLeftImage.Location = new System.Drawing.Point(345, 28);
-            this.mirrorLeftImage.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.mirrorLeftImage.Location = new System.Drawing.Point(431, 35);
+            this.mirrorLeftImage.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
             this.mirrorLeftImage.Name = "mirrorLeftImage";
-            this.mirrorLeftImage.Size = new System.Drawing.Size(315, 315);
+            this.mirrorLeftImage.Size = new System.Drawing.Size(395, 395);
             this.mirrorLeftImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mirrorLeftImage.TabIndex = 5;
             this.mirrorLeftImage.TabStop = false;
@@ -107,10 +122,10 @@ namespace MirrorFakePerson
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 2);
+            this.label1.Location = new System.Drawing.Point(159, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 15);
+            this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Source Image";
             // 
@@ -118,10 +133,10 @@ namespace MirrorFakePerson
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(464, 2);
+            this.label2.Location = new System.Drawing.Point(580, 2);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 15);
+            this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mirrored Left";
             // 
@@ -129,10 +144,10 @@ namespace MirrorFakePerson
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(796, 2);
+            this.label3.Location = new System.Drawing.Point(995, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 15);
+            this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Mirrored Right";
             // 
@@ -141,10 +156,10 @@ namespace MirrorFakePerson
             this.sourceImage.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.sourceImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.sourceImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sourceImage.Location = new System.Drawing.Point(10, 28);
-            this.sourceImage.Margin = new System.Windows.Forms.Padding(10, 8, 10, 8);
+            this.sourceImage.Location = new System.Drawing.Point(12, 35);
+            this.sourceImage.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
             this.sourceImage.Name = "sourceImage";
-            this.sourceImage.Size = new System.Drawing.Size(315, 315);
+            this.sourceImage.Size = new System.Drawing.Size(395, 395);
             this.sourceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.sourceImage.TabIndex = 4;
             this.sourceImage.TabStop = false;
@@ -157,18 +172,30 @@ namespace MirrorFakePerson
             this.commandPanel.Controls.Add(this.loadLocalBtn);
             this.commandPanel.Controls.Add(this.loadGeneratedBtn);
             this.commandPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.commandPanel.Location = new System.Drawing.Point(2, 387);
+            this.commandPanel.Location = new System.Drawing.Point(2, 484);
             this.commandPanel.Margin = new System.Windows.Forms.Padding(2);
             this.commandPanel.Name = "commandPanel";
-            this.commandPanel.Size = new System.Drawing.Size(1002, 36);
+            this.commandPanel.Size = new System.Drawing.Size(1254, 46);
             this.commandPanel.TabIndex = 8;
+            // 
+            // aboutBtn
+            // 
+            this.aboutBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.aboutBtn.Location = new System.Drawing.Point(1120, 7);
+            this.aboutBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.aboutBtn.Name = "aboutBtn";
+            this.aboutBtn.Size = new System.Drawing.Size(125, 32);
+            this.aboutBtn.TabIndex = 9;
+            this.aboutBtn.Text = "About";
+            this.aboutBtn.UseVisualStyleBackColor = true;
+            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
             // 
             // pasteBtn
             // 
-            this.pasteBtn.Location = new System.Drawing.Point(295, 5);
+            this.pasteBtn.Location = new System.Drawing.Point(369, 6);
             this.pasteBtn.Margin = new System.Windows.Forms.Padding(2);
             this.pasteBtn.Name = "pasteBtn";
-            this.pasteBtn.Size = new System.Drawing.Size(140, 26);
+            this.pasteBtn.Size = new System.Drawing.Size(175, 32);
             this.pasteBtn.TabIndex = 8;
             this.pasteBtn.Text = "Paste Image";
             this.pasteBtn.UseVisualStyleBackColor = true;
@@ -176,10 +203,10 @@ namespace MirrorFakePerson
             // 
             // loadLocalBtn
             // 
-            this.loadLocalBtn.Location = new System.Drawing.Point(151, 5);
+            this.loadLocalBtn.Location = new System.Drawing.Point(189, 6);
             this.loadLocalBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loadLocalBtn.Name = "loadLocalBtn";
-            this.loadLocalBtn.Size = new System.Drawing.Size(140, 26);
+            this.loadLocalBtn.Size = new System.Drawing.Size(175, 32);
             this.loadLocalBtn.TabIndex = 7;
             this.loadLocalBtn.Text = "Load Local Image ";
             this.loadLocalBtn.UseVisualStyleBackColor = true;
@@ -187,10 +214,10 @@ namespace MirrorFakePerson
             // 
             // loadGeneratedBtn
             // 
-            this.loadGeneratedBtn.Location = new System.Drawing.Point(7, 5);
+            this.loadGeneratedBtn.Location = new System.Drawing.Point(9, 6);
             this.loadGeneratedBtn.Margin = new System.Windows.Forms.Padding(2);
             this.loadGeneratedBtn.Name = "loadGeneratedBtn";
-            this.loadGeneratedBtn.Size = new System.Drawing.Size(140, 26);
+            this.loadGeneratedBtn.Size = new System.Drawing.Size(175, 32);
             this.loadGeneratedBtn.TabIndex = 0;
             this.loadGeneratedBtn.Text = "Load Generated Image ";
             this.loadGeneratedBtn.UseVisualStyleBackColor = true;
@@ -200,11 +227,12 @@ namespace MirrorFakePerson
             // 
             this.centerPosTrack.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centerPosTrack.Enabled = false;
-            this.centerPosTrack.Location = new System.Drawing.Point(3, 354);
+            this.centerPosTrack.Location = new System.Drawing.Point(4, 444);
+            this.centerPosTrack.Margin = new System.Windows.Forms.Padding(4);
             this.centerPosTrack.Maximum = 9;
             this.centerPosTrack.Minimum = 1;
             this.centerPosTrack.Name = "centerPosTrack";
-            this.centerPosTrack.Size = new System.Drawing.Size(329, 28);
+            this.centerPosTrack.Size = new System.Drawing.Size(411, 34);
             this.centerPosTrack.TabIndex = 9;
             this.centerPosTrack.TickFrequency = 10;
             this.centerPosTrack.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
@@ -212,33 +240,33 @@ namespace MirrorFakePerson
             this.centerPosTrack.Scroll += new System.EventHandler(this.centerPosTrack_Scroll);
             this.centerPosTrack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.centerPosTrack_MouseDown);
             // 
+            // copyMirrorLeftBtn
+            // 
+            this.copyMirrorLeftBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.copyMirrorLeftBtn.Location = new System.Drawing.Point(541, 445);
+            this.copyMirrorLeftBtn.Name = "copyMirrorLeftBtn";
+            this.copyMirrorLeftBtn.Size = new System.Drawing.Size(175, 32);
+            this.copyMirrorLeftBtn.TabIndex = 10;
+            this.copyMirrorLeftBtn.Text = "Copy Image";
+            this.copyMirrorLeftBtn.UseVisualStyleBackColor = true;
+            this.copyMirrorLeftBtn.Click += new System.EventHandler(this.copyMirrorLeftBtn_Click);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Image Files|*.png;*.jpeg;*.jpg;*.gif;*.bmp";
             this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // aboutBtn
-            // 
-            this.aboutBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.aboutBtn.Location = new System.Drawing.Point(894, 5);
-            this.aboutBtn.Name = "aboutBtn";
-            this.aboutBtn.Size = new System.Drawing.Size(100, 26);
-            this.aboutBtn.TabIndex = 9;
-            this.aboutBtn.Text = "About";
-            this.aboutBtn.UseVisualStyleBackColor = true;
-            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
-            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1032, 445);
+            this.ClientSize = new System.Drawing.Size(1290, 556);
             this.Controls.Add(this.layoutTable);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
-            this.Padding = new System.Windows.Forms.Padding(13, 10, 13, 10);
+            this.Padding = new System.Windows.Forms.Padding(16, 12, 16, 12);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mirror Fake Person";
             this.layoutTable.ResumeLayout(false);
@@ -268,6 +296,8 @@ namespace MirrorFakePerson
         private System.Windows.Forms.Button pasteBtn;
         private System.Windows.Forms.TrackBar centerPosTrack;
         private System.Windows.Forms.Button aboutBtn;
+        private System.Windows.Forms.Button copyMirrorRightBtn;
+        private System.Windows.Forms.Button copyMirrorLeftBtn;
     }
 }
 

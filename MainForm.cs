@@ -133,5 +133,15 @@ namespace MirrorFakePerson
             AboutDialog aboutDialog = new AboutDialog();
             aboutDialog.ShowDialog();
         }
+
+        private void copyMirrorLeftBtn_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(mirrorLeftImage.Image);
+        }
+
+        private void copyMirrorRightBtn_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetImage(mirrorRightImage.Image);
+        }
     }
 }
