@@ -29,11 +29,14 @@ namespace MirrorFakePerson
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
             this.closeButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
             this.githubLink = new System.Windows.Forms.LinkLabel();
             this.noteLabel = new System.Windows.Forms.Label();
+            this.Icon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Icon)).BeginInit();
             this.SuspendLayout();
             // 
             // closeButton
@@ -52,9 +55,9 @@ namespace MirrorFakePerson
             this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.titleLabel.Location = new System.Drawing.Point(12, 12);
+            this.titleLabel.Location = new System.Drawing.Point(66, 12);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(371, 28);
+            this.titleLabel.Size = new System.Drawing.Size(319, 28);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Mirror Fake Person";
             // 
@@ -62,9 +65,9 @@ namespace MirrorFakePerson
             // 
             this.versionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.versionLabel.Location = new System.Drawing.Point(15, 43);
+            this.versionLabel.Location = new System.Drawing.Point(70, 42);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(368, 18);
+            this.versionLabel.Size = new System.Drawing.Size(315, 18);
             this.versionLabel.TabIndex = 3;
             this.versionLabel.Text = "Version";
             // 
@@ -75,7 +78,7 @@ namespace MirrorFakePerson
             this.githubLink.AutoSize = true;
             this.githubLink.DisabledLinkColor = System.Drawing.SystemColors.GrayText;
             this.githubLink.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.githubLink.Location = new System.Drawing.Point(15, 128);
+            this.githubLink.Location = new System.Drawing.Point(12, 128);
             this.githubLink.Name = "githubLink";
             this.githubLink.Size = new System.Drawing.Size(104, 15);
             this.githubLink.TabIndex = 5;
@@ -89,12 +92,22 @@ namespace MirrorFakePerson
             this.noteLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noteLabel.Location = new System.Drawing.Point(15, 64);
+            this.noteLabel.Location = new System.Drawing.Point(12, 71);
             this.noteLabel.Name = "noteLabel";
-            this.noteLabel.Size = new System.Drawing.Size(368, 48);
+            this.noteLabel.Size = new System.Drawing.Size(371, 48);
             this.noteLabel.TabIndex = 6;
             this.noteLabel.Text = "This application is released as open source, do whatever you want with it, I don\'" +
     "t care. Maybe credit me for the smart idea of making this thing.";
+            // 
+            // Icon
+            // 
+            this.Icon.Image = global::MirrorFakePerson.Properties.Resources._96;
+            this.Icon.Location = new System.Drawing.Point(12, 12);
+            this.Icon.Name = "Icon";
+            this.Icon.Size = new System.Drawing.Size(48, 48);
+            this.Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Icon.TabIndex = 7;
+            this.Icon.TabStop = false;
             // 
             // AboutDialog
             // 
@@ -103,6 +116,7 @@ namespace MirrorFakePerson
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(397, 160);
+            this.Controls.Add(this.Icon);
             this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.githubLink);
             this.Controls.Add(this.versionLabel);
@@ -117,6 +131,7 @@ namespace MirrorFakePerson
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.AboutDialog_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,5 +144,6 @@ namespace MirrorFakePerson
         private System.Windows.Forms.Label versionLabel;
         private System.Windows.Forms.LinkLabel githubLink;
         private System.Windows.Forms.Label noteLabel;
+        private System.Windows.Forms.PictureBox Icon;
     }
 }
