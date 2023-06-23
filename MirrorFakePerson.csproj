@@ -40,6 +40,9 @@
   <PropertyGroup>
     <ApplicationIcon>MirrorFace.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MirrorFakePerson.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
