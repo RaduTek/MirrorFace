@@ -60,7 +60,6 @@ namespace MirrorFakePerson
         {
             if (e.Button == MouseButtons.Right)
             {
-                centerPosTrack.Maximum = sourceImage.Image.Width;
                 centerPosTrack.Value = centerPosTrack.Maximum / 2;
 
                 FlipImages();
@@ -70,7 +69,7 @@ namespace MirrorFakePerson
         private void LoadImages()
         {
             centerPosTrack.Enabled = true;
-            centerPosTrack.Maximum = sourceImage.Image.Width;
+            centerPosTrack.Maximum = sourceImage.Image.Width - 1;
             centerPosTrack.Value = centerPosTrack.Maximum / 2;
 
             FlipImages();
@@ -78,13 +77,13 @@ namespace MirrorFakePerson
 
         private void FlipImages()
         {
-            FlipImageVertically(false);
             FlipImageVertically(true);
+            FlipImageVertically(false);
         }
 
         private void FlipImageVertically(bool sideToFlip)
         {
-            int sliceWidth = sideToFlip ? centerPosTrack.Value : sourceImage.Image.Width - centerPosTrack.Value;
+            int sliceWidth = sideToFlip ? centerPosTrack.Value : (sourceImage.Image.Width - centerPosTrack.Value);
             int sourceHeight = sourceImage.Image.Height;
 
             Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, sourceImage.Image.PixelFormat);
