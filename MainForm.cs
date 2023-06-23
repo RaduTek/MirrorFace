@@ -18,9 +18,15 @@ namespace MirrorFakePerson
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sourceImage.Load("https://thispersondoesnotexist.com/image");
+            try
+            {
+                sourceImage.Load("https://thispersondoesnotexist.com/");
+                LoadImages();
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load generated image.\nReason: " + ex.Message, "MirrorFakePerson", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            LoadImages();
         }
 
         private void button2_Click(object sender, EventArgs e)
