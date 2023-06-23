@@ -51,7 +51,7 @@ namespace MirrorFakePerson
             }
             else
             {
-                MessageBox.Show(this, "Clipboard data is not an image.", "Error pasting image", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Error pasting image: Clipboard data is not an image.", "MirrorFakePerson", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
