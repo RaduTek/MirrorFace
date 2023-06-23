@@ -94,7 +94,7 @@ namespace MirrorFakePerson
             int sliceWidth = centerPosTrack.Value;
             int sourceHeight = sourceImage.Image.Height;
 
-            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, PixelFormat.Format32bppArgb);
+            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, sourceImage.Image.PixelFormat);
             mirrorLeftImage.Image = b;
 
             Graphics g = Graphics.FromImage(mirrorLeftImage.Image);
@@ -104,7 +104,7 @@ namespace MirrorFakePerson
             Rectangle source = new Rectangle(0, 0, sliceWidth, sourceHeight);
             Rectangle dest = new Rectangle(sliceWidth, 0, sliceWidth, sourceHeight);
 
-            Bitmap b2 = b1.Clone(source, PixelFormat.Format32bppArgb);
+            Bitmap b2 = b1.Clone(source, sourceImage.Image.PixelFormat);
             b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
             g.DrawImage(b1, source, source, GraphicsUnit.Pixel);
@@ -116,7 +116,7 @@ namespace MirrorFakePerson
             int sliceWidth = sourceImage.Image.Width - centerPosTrack.Value;
             int sourceHeight = sourceImage.Image.Height;
 
-            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, PixelFormat.Format32bppArgb);
+            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, sourceImage.Image.PixelFormat);
             mirrorRightImage.Image = b;
 
             Graphics g = Graphics.FromImage(mirrorRightImage.Image);
@@ -127,7 +127,7 @@ namespace MirrorFakePerson
             Rectangle source = new Rectangle(0, 0, sliceWidth, sourceHeight);
             Rectangle dest = new Rectangle(sliceWidth, 0, sliceWidth, sourceHeight);
 
-            Bitmap b2 = b1.Clone(source, PixelFormat.Format32bppArgb);
+            Bitmap b2 = b1.Clone(source, sourceImage.Image.PixelFormat);
             b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
             g.DrawImage(b1, source, source, GraphicsUnit.Pixel);
