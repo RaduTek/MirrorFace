@@ -78,24 +78,28 @@ namespace MirrorFakePerson
 
         private void FlipImages()
         {
-            mirrorLeftImage.Image = (Image)sourceImage.Image.Clone();
-            mirrorRightImage.Image = (Image)sourceImage.Image.Clone();
-
-            flip1();
-            flip2();
+            FlipImageVertically(false);
+            FlipImageVertically(true);
         }
 
-        private void flip1()
+        private void FlipImageVertically(bool sideToFlip)
         {
-            int sliceWidth = centerPosTrack.Value;
+            int sliceWidth = sideToFlip ? centerPosTrack.Value : sourceImage.Image.Width - centerPosTrack.Value;
             int sourceHeight = sourceImage.Image.Height;
 
             Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, sourceImage.Image.PixelFormat);
-            mirrorLeftImage.Image = b;
 
-            Graphics g = Graphics.FromImage(mirrorLeftImage.Image);
+            if (sideToFlip)
+                mirrorLeftImage.Image = b;
+            else
+                mirrorRightImage.Image = b;
+
+            Graphics g = Graphics.FromImage(sideToFlip ? mirrorLeftImage.Image : mirrorRightImage.Image);
 
             Bitmap b1 = new Bitmap(sourceImage.Image);
+            if (!sideToFlip) { 
+                b1.RotateFlip(RotateFlipType.RotateNoneFlipX); 
+            }
 
             Rectangle source = new Rectangle(0, 0, sliceWidth, sourceHeight);
             Rectangle dest = new Rectangle(sliceWidth, 0, sliceWidth, sourceHeight);
@@ -105,29 +109,9 @@ namespace MirrorFakePerson
 
             g.DrawImage(b1, source, source, GraphicsUnit.Pixel);
             g.DrawImage(b2, dest, source, GraphicsUnit.Pixel);
-        }
 
-        private void flip2()
-        {
-            int sliceWidth = sourceImage.Image.Width - centerPosTrack.Value;
-            int sourceHeight = sourceImage.Image.Height;
-
-            Bitmap b = new Bitmap(sliceWidth * 2, sourceHeight, sourceImage.Image.PixelFormat);
-            mirrorRightImage.Image = b;
-
-            Graphics g = Graphics.FromImage(mirrorRightImage.Image);
-
-            Bitmap b1 = new Bitmap(sourceImage.Image);
-            b1.RotateFlip(RotateFlipType.RotateNoneFlipX);
-
-            Rectangle source = new Rectangle(0, 0, sliceWidth, sourceHeight);
-            Rectangle dest = new Rectangle(sliceWidth, 0, sliceWidth, sourceHeight);
-
-            Bitmap b2 = b1.Clone(source, sourceImage.Image.PixelFormat);
-            b2.RotateFlip(RotateFlipType.RotateNoneFlipX);
-
-            g.DrawImage(b1, source, source, GraphicsUnit.Pixel);
-            g.DrawImage(b2, dest, source, GraphicsUnit.Pixel);
+            b1.Dispose();
+            b2.Dispose();
         }
 
         private void aboutBtn_Click(object sender, EventArgs e)
