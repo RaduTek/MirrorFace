@@ -110,19 +110,25 @@ namespace MirrorFakePerson
             FlipImages();
         }
 
+        private int fileCounter = 1;
+
         private void SaveImageAs(Image imageToSave)
         {
+            saveFileDialog.FileName = $"Image {fileCounter}";
+
             DialogResult result = saveFileDialog.ShowDialog();
 
             if (result == DialogResult.OK)
             {
+                fileCounter += 1;
                 ImageFormat saveFormat = ImageFormat.Bmp;
                 string fileName = saveFileDialog.FileName;
-                if (fileName.EndsWith(".png"))
+                string fileExt = Path.GetExtension(fileName).ToLower();
+                if (fileExt == ".png")
                     saveFormat = ImageFormat.Png;
-                else if (fileName.EndsWith(".jpg"))
+                else if (fileExt == ".jpg" || fileExt == ".jpeg")
                     saveFormat = ImageFormat.Jpeg;
-                else if (fileName.EndsWith(".bmp"))
+                else if (fileExt == ".bmp")
                     saveFormat = ImageFormat.Bmp;
 
                 imageToSave.Save(fileName, saveFormat);
