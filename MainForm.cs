@@ -27,7 +27,7 @@ namespace MirrorFakePerson
                 LoadImages();
             } catch (Exception ex)
             {
-                MessageBox.Show("Failed to load generated image.\nReason: " + ex.Message, "MirrorFakePerson", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to load generated image.\nReason: " + ex.Message, "Mirror Fake Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -45,7 +45,7 @@ namespace MirrorFakePerson
                 LoadImages();
             } else
             {
-                MessageBox.Show(this, "Error pasting image: Clipboard data is not an image.", "MirrorFakePerson", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Error pasting image: Clipboard data is not an image.", "Mirror Fake Person", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

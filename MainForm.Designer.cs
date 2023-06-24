@@ -226,7 +226,7 @@ namespace MirrorFakePerson
             // 
             // editImageMenuButton
             // 
-            this.editImageMenuButton.Location = new System.Drawing.Point(235, 8);
+            this.editImageMenuButton.Location = new System.Drawing.Point(236, 8);
             this.editImageMenuButton.Name = "editImageMenuButton";
             this.editImageMenuButton.Size = new System.Drawing.Size(210, 39);
             this.editImageMenuButton.TabIndex = 11;
@@ -236,7 +236,7 @@ namespace MirrorFakePerson
             // 
             // loadImageMenuButton
             // 
-            this.loadImageMenuButton.Location = new System.Drawing.Point(19, 8);
+            this.loadImageMenuButton.Location = new System.Drawing.Point(20, 8);
             this.loadImageMenuButton.Name = "loadImageMenuButton";
             this.loadImageMenuButton.Size = new System.Drawing.Size(210, 39);
             this.loadImageMenuButton.TabIndex = 10;
@@ -312,6 +312,7 @@ namespace MirrorFakePerson
             // openFileDialog
             // 
             this.openFileDialog.Filter = "Image Files|*.png;*.jpeg;*.jpg;*.gif;*.bmp";
+            this.openFileDialog.Title = "Open image";
             this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // loadImageMenu
@@ -326,7 +327,7 @@ namespace MirrorFakePerson
             this.fromClipboardToolStripMenuItem});
             this.loadImageMenu.Name = "loadImageMenu";
             this.loadImageMenu.ShowImageMargin = false;
-            this.loadImageMenu.Size = new System.Drawing.Size(304, 203);
+            this.loadImageMenu.Size = new System.Drawing.Size(304, 170);
             // 
             // copyOriginalToClipboardToolStripMenuItem
             // 
