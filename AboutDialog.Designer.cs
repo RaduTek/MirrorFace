@@ -29,7 +29,6 @@ namespace MirrorFakePerson
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
             this.closeButton = new System.Windows.Forms.Button();
             this.titleLabel = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
@@ -42,9 +41,10 @@ namespace MirrorFakePerson
             // closeButton
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.Location = new System.Drawing.Point(305, 122);
+            this.closeButton.Location = new System.Drawing.Point(462, 180);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(80, 26);
+            this.closeButton.Size = new System.Drawing.Size(120, 39);
             this.closeButton.TabIndex = 0;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
@@ -55,9 +55,10 @@ namespace MirrorFakePerson
             this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            this.titleLabel.Location = new System.Drawing.Point(66, 12);
+            this.titleLabel.Location = new System.Drawing.Point(99, 18);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(319, 28);
+            this.titleLabel.Size = new System.Drawing.Size(482, 42);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Mirror Fake Person";
             // 
@@ -65,9 +66,10 @@ namespace MirrorFakePerson
             // 
             this.versionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.versionLabel.Location = new System.Drawing.Point(70, 42);
+            this.versionLabel.Location = new System.Drawing.Point(105, 63);
+            this.versionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(315, 18);
+            this.versionLabel.Size = new System.Drawing.Size(476, 27);
             this.versionLabel.TabIndex = 3;
             this.versionLabel.Text = "Version";
             // 
@@ -78,9 +80,10 @@ namespace MirrorFakePerson
             this.githubLink.AutoSize = true;
             this.githubLink.DisabledLinkColor = System.Drawing.SystemColors.GrayText;
             this.githubLink.LinkColor = System.Drawing.SystemColors.Highlight;
-            this.githubLink.Location = new System.Drawing.Point(12, 128);
+            this.githubLink.Location = new System.Drawing.Point(18, 189);
+            this.githubLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.githubLink.Name = "githubLink";
-            this.githubLink.Size = new System.Drawing.Size(104, 15);
+            this.githubLink.Size = new System.Drawing.Size(158, 25);
             this.githubLink.TabIndex = 5;
             this.githubLink.TabStop = true;
             this.githubLink.Text = "GitHub Repository";
@@ -92,19 +95,21 @@ namespace MirrorFakePerson
             this.noteLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.noteLabel.Location = new System.Drawing.Point(12, 71);
+            this.noteLabel.Location = new System.Drawing.Point(18, 106);
+            this.noteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.noteLabel.Name = "noteLabel";
-            this.noteLabel.Size = new System.Drawing.Size(371, 48);
+            this.noteLabel.Size = new System.Drawing.Size(560, 69);
             this.noteLabel.TabIndex = 6;
-            this.noteLabel.Text = "This application is released as open source, do whatever you want with it, I don\'" +
-    "t care. Maybe credit me for the smart idea of making this thing.";
+            this.noteLabel.Text = "Mirror images vertically, preferably AI generated faces.\r\nAI generated faces sour" +
+    "ced from https://thispersondoesnotexist.com";
             // 
             // Icon
             // 
             this.Icon.Image = global::MirrorFakePerson.Properties.Resources._96;
-            this.Icon.Location = new System.Drawing.Point(12, 12);
+            this.Icon.Location = new System.Drawing.Point(18, 18);
+            this.Icon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Icon.Name = "Icon";
-            this.Icon.Size = new System.Drawing.Size(48, 48);
+            this.Icon.Size = new System.Drawing.Size(72, 72);
             this.Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icon.TabIndex = 7;
             this.Icon.TabStop = false;
@@ -112,10 +117,10 @@ namespace MirrorFakePerson
             // AboutDialog
             // 
             this.AcceptButton = this.closeButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(397, 160);
+            this.ClientSize = new System.Drawing.Size(600, 237);
             this.Controls.Add(this.Icon);
             this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.githubLink);
@@ -124,6 +129,7 @@ namespace MirrorFakePerson
             this.Controls.Add(this.closeButton);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutDialog";
