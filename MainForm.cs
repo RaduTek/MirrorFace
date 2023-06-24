@@ -132,6 +132,7 @@ namespace MirrorFakePerson
 
         private void centerPosTrack_Scroll(object sender, EventArgs e)
         {
+            sourceImage.Invalidate();
             FlipImages();
         }
 
@@ -142,6 +143,21 @@ namespace MirrorFakePerson
                 centerPosTrack.Value = centerPosTrack.Maximum / 2;
 
                 FlipImages();
+            }
+        }
+
+        private void sourceImage_Paint(object sender, PaintEventArgs e)
+        {
+            if (sourceImage.Image != null)
+            {
+                int lineX = (centerPosTrack.Value * sourceImage.Width) / sourceImage.Image.Width;
+
+                Point lineStart = new Point(lineX, 0);
+                Point lineEnd = new Point(lineX, sourceImage.Height);
+
+                Pen linePen = new Pen(Color.FromArgb(128, 255, 0, 0), 2);
+
+                e.Graphics.DrawLine(linePen, lineStart, lineEnd);
             }
         }
 
@@ -278,5 +294,6 @@ namespace MirrorFakePerson
         }
 
         #endregion
+
     }
 }

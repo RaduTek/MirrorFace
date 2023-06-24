@@ -211,6 +211,7 @@ namespace MirrorFakePerson
             this.sourceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.sourceImage.TabIndex = 4;
             this.sourceImage.TabStop = false;
+            this.sourceImage.Paint += new System.Windows.Forms.PaintEventHandler(this.sourceImage_Paint);
             // 
             // commandPanel
             // 
@@ -380,7 +381,7 @@ namespace MirrorFakePerson
             this.flipVerticallyToolStripMenuItem});
             this.editImageMenu.Name = "editImageMenu";
             this.editImageMenu.ShowImageMargin = false;
-            this.editImageMenu.Size = new System.Drawing.Size(268, 171);
+            this.editImageMenu.Size = new System.Drawing.Size(268, 138);
             // 
             // rotateClockwiseToolStripMenuItem
             // 
