@@ -22,7 +22,15 @@ namespace MirrorFakePerson
 
         private void AboutDialog_Load(object sender, EventArgs e)
         {
-            versionLabel.Text = "Version " + Application.ProductVersion;
+            string versionString = Application.ProductVersion;
+
+            // Remove the ".0" chain from the end of the version string
+            while(versionString.EndsWith(".0"))
+            {
+                versionString = versionString.Substring(0, versionString.Length - 2);
+            }
+
+            versionLabel.Text = "Version " + versionString;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
