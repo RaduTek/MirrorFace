@@ -380,39 +380,39 @@ namespace MirrorFakePerson
             this.flipVerticallyToolStripMenuItem});
             this.editImageMenu.Name = "editImageMenu";
             this.editImageMenu.ShowImageMargin = false;
-            this.editImageMenu.Size = new System.Drawing.Size(250, 138);
+            this.editImageMenu.Size = new System.Drawing.Size(268, 171);
             // 
             // rotateClockwiseToolStripMenuItem
             // 
             this.rotateClockwiseToolStripMenuItem.Name = "rotateClockwiseToolStripMenuItem";
-            this.rotateClockwiseToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
-            this.rotateClockwiseToolStripMenuItem.Text = "Rotate clockwise";
+            this.rotateClockwiseToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.rotateClockwiseToolStripMenuItem.Text = "⤵️ Rotate clockwise";
             this.rotateClockwiseToolStripMenuItem.Click += new System.EventHandler(this.rotateClockwiseToolStripMenuItem_Click);
             // 
             // rotateCounterclockwiseToolStripMenuItem
             // 
             this.rotateCounterclockwiseToolStripMenuItem.Name = "rotateCounterclockwiseToolStripMenuItem";
-            this.rotateCounterclockwiseToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
-            this.rotateCounterclockwiseToolStripMenuItem.Text = "Rotate counterclockwise";
+            this.rotateCounterclockwiseToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.rotateCounterclockwiseToolStripMenuItem.Text = "⤴️ Rotate counterclockwise";
             this.rotateCounterclockwiseToolStripMenuItem.Click += new System.EventHandler(this.rotateCounterclockwiseToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(246, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(264, 6);
             // 
             // flipHorizontallyToolStripMenuItem
             // 
             this.flipHorizontallyToolStripMenuItem.Name = "flipHorizontallyToolStripMenuItem";
-            this.flipHorizontallyToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
-            this.flipHorizontallyToolStripMenuItem.Text = "Flip horizontally";
+            this.flipHorizontallyToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.flipHorizontallyToolStripMenuItem.Text = "↔️ Flip horizontally";
             this.flipHorizontallyToolStripMenuItem.Click += new System.EventHandler(this.flipHorizontallyToolStripMenuItem_Click);
             // 
             // flipVerticallyToolStripMenuItem
             // 
             this.flipVerticallyToolStripMenuItem.Name = "flipVerticallyToolStripMenuItem";
-            this.flipVerticallyToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
-            this.flipVerticallyToolStripMenuItem.Text = "Flip vertically";
+            this.flipVerticallyToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.flipVerticallyToolStripMenuItem.Text = " ↕️ Flip vertically";
             this.flipVerticallyToolStripMenuItem.Click += new System.EventHandler(this.flipVerticallyToolStripMenuItem_Click);
             // 
             // saveFileDialog
