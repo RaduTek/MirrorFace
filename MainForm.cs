@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MirrorFakePerson
@@ -13,6 +14,8 @@ namespace MirrorFakePerson
             InitializeComponent();
 
             Mica = new SimulatedMica(this);
+
+            sourceImage.AllowDrop = true;
 
             // Disable controls that don't work with no image loaded
             copyOriginalToClipboardToolStripMenuItem.Enabled = saveOriginalAsToolStripMenuItem.Enabled = copyMirrorLeftBtn.Enabled = saveMirrorLeftBtn.Enabled = copyMirrorRightBtn.Enabled = saveMirrorRightBtn.Enabled = editImageMenuButton.Enabled = centerPosTrack.Enabled = false;
@@ -295,5 +298,43 @@ namespace MirrorFakePerson
 
         #endregion
 
+        #region "Drag and drop to load image"
+
+        private bool IsImageFile(string filePath)
+        {
+            string extension = Path.GetExtension(filePath).ToLower();
+            return extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".gif" || extension == ".bmp";
+        }
+
+        private void sourceImage_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] droppedFiles = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                foreach (string file in droppedFiles)
+                {
+                    if (IsImageFile(file))
+                    {
+                        try
+                        {
+                            Image i = Image.FromFile(file);
+                            sourceImage.Image = i;
+                            LoadImages();
+                        } catch { }
+                    }
+                }
+            }
+        }
+
+        private void sourceImage_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.All;
+            }
+        }
+
+        #endregion
     }
 }

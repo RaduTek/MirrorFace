@@ -211,6 +211,8 @@ namespace MirrorFakePerson
             this.sourceImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.sourceImage.TabIndex = 4;
             this.sourceImage.TabStop = false;
+            this.sourceImage.DragDrop += new System.Windows.Forms.DragEventHandler(this.sourceImage_DragDrop);
+            this.sourceImage.DragEnter += new System.Windows.Forms.DragEventHandler(this.sourceImage_DragEnter);
             this.sourceImage.Paint += new System.Windows.Forms.PaintEventHandler(this.sourceImage_Paint);
             // 
             // commandPanel
@@ -423,6 +425,7 @@ namespace MirrorFakePerson
             // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
