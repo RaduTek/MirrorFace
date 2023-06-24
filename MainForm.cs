@@ -266,5 +266,67 @@ namespace MirrorFakePerson
 
         #endregion
 
+        #region "Simulated Mica effect"
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            // Take a screenshot of the form and set a sampled pixel of the titlebar as the form background color
+            BackgroundCaptureColor(true);
+        }
+
+        private Timer BgCaptureTimer;
+
+        private Bitmap ScreenshotForm()
+        {
+            Rectangle bounds = Bounds;
+            Bitmap bmp = new Bitmap(Width, Height);
+
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+            }
+
+            return bmp;
+        }
+
+        private void BackgroundCaptureEvent(object sender, EventArgs e)
+        {
+            BackgroundCaptureColor(true);
+        }
+
+        private void BackgroundCaptureColor(bool delayed = false)
+        {
+            if (delayed)
+            {
+                BgCaptureTimer = new Timer();
+
+                BgCaptureTimer.Tick += new EventHandler(BgCaptureTimerTick);
+                BgCaptureTimer.Interval = 100;
+
+                BgCaptureTimer.Start();
+            } else
+            {
+                BgCaptureTimerTick(null, null);
+            }
+        }
+
+        private void BgCaptureTimerTick(object sender, EventArgs e)
+        {
+            Bitmap formScreenshot = ScreenshotForm();
+
+            Color titleBarColor = formScreenshot.GetPixel(formScreenshot.Width / 2, 9);
+
+            if (titleBarColor.R + titleBarColor.G + titleBarColor.B >= 720)
+            {
+                BackColor = titleBarColor;
+
+                if (BgCaptureTimer != null)
+                {
+                    BgCaptureTimer.Stop();
+                    BgCaptureTimer.Dispose();
+                }
+            }
+        }
+
+        #endregion
     }
 }

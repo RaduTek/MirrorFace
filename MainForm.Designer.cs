@@ -52,6 +52,7 @@ namespace MirrorFakePerson
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.loadImageMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyOriginalToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveOriginalAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.generatedByAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromLocalImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@ namespace MirrorFakePerson
             this.flipHorizontallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flipVerticallyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.saveOriginalAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layoutTable.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mirrorRightImage)).BeginInit();
@@ -336,6 +336,13 @@ namespace MirrorFakePerson
             this.copyOriginalToClipboardToolStripMenuItem.Text = "📄 Copy Original to Clipboard";
             this.copyOriginalToClipboardToolStripMenuItem.Click += new System.EventHandler(this.copyOriginalToClipboardToolStripMenuItem_Click);
             // 
+            // saveOriginalAsToolStripMenuItem
+            // 
+            this.saveOriginalAsToolStripMenuItem.Name = "saveOriginalAsToolStripMenuItem";
+            this.saveOriginalAsToolStripMenuItem.Size = new System.Drawing.Size(303, 32);
+            this.saveOriginalAsToolStripMenuItem.Text = "💾 Save Original as...";
+            this.saveOriginalAsToolStripMenuItem.Click += new System.EventHandler(this.saveOriginalAsToolStripMenuItem_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -413,13 +420,6 @@ namespace MirrorFakePerson
             this.saveFileDialog.Filter = "PNG Image|*.png|JPEG Image|*.jpg|Bitmap|*.bmp";
             this.saveFileDialog.Title = "Save image as";
             // 
-            // saveOriginalAsToolStripMenuItem
-            // 
-            this.saveOriginalAsToolStripMenuItem.Name = "saveOriginalAsToolStripMenuItem";
-            this.saveOriginalAsToolStripMenuItem.Size = new System.Drawing.Size(303, 32);
-            this.saveOriginalAsToolStripMenuItem.Text = "💾 Save Original as...";
-            this.saveOriginalAsToolStripMenuItem.Click += new System.EventHandler(this.saveOriginalAsToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -433,6 +433,7 @@ namespace MirrorFakePerson
             this.Padding = new System.Windows.Forms.Padding(20, 15, 20, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mirror Fake Person";
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.layoutTable.ResumeLayout(false);
             this.layoutTable.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
