@@ -13,6 +13,8 @@ namespace MirrorFakePerson
         public AboutDialog()
         {
             InitializeComponent();
+
+            Mica = new SimulatedMica(this);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -35,7 +37,18 @@ namespace MirrorFakePerson
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
+
+        #region "Simulated Mica effect"
+
+        SimulatedMica Mica;
+
+        private void AboutDialog_Shown(object sender, EventArgs e)
+        {
+            Mica.CaptureSetColor(true);
+        }
+
+        #endregion
     }
 }

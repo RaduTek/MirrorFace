@@ -42,7 +42,7 @@ namespace MirrorFakePerson
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Location = new System.Drawing.Point(462, 180);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(4);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(120, 39);
             this.closeButton.TabIndex = 0;
@@ -107,7 +107,7 @@ namespace MirrorFakePerson
             // 
             this.Icon.Image = global::MirrorFakePerson.Properties.Resources._96;
             this.Icon.Location = new System.Drawing.Point(18, 18);
-            this.Icon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon.Margin = new System.Windows.Forms.Padding(4);
             this.Icon.Name = "Icon";
             this.Icon.Size = new System.Drawing.Size(72, 72);
             this.Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,7 +129,7 @@ namespace MirrorFakePerson
             this.Controls.Add(this.closeButton);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutDialog";
@@ -137,6 +137,7 @@ namespace MirrorFakePerson
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.AboutDialog_Load);
+            this.Shown += new System.EventHandler(this.AboutDialog_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
