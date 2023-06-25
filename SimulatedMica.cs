@@ -20,6 +20,13 @@ namespace MirrorFakePerson
 
         private Timer BgCaptureTimer;
 
+        private int AttemptCounter = 0;
+
+        private bool IsWindows11()
+        {
+            return Environment.OSVersion.Version.Build >= 22000;
+        }
+
         private Bitmap ScreenshotForm()
         {
             Rectangle bounds = Form.Bounds;
@@ -35,13 +42,23 @@ namespace MirrorFakePerson
 
         public void CaptureSetColor(bool delayed = false)
         {
+            if (!IsWindows11())
+                return;
+
             // Take a screenshot of the form and set a sampled pixel of the titlebar as the form background color
             if (delayed)
             {
+                if (BgCaptureTimer != null)
+                {
+                    BgCaptureTimer.Stop();
+                    BgCaptureTimer.Dispose();
+                }
+
                 BgCaptureTimer = new Timer();
+                AttemptCounter = 0;
 
                 BgCaptureTimer.Tick += new EventHandler(BgCaptureTimerTick);
-                BgCaptureTimer.Interval = 50;
+                BgCaptureTimer.Interval = 150;
 
                 BgCaptureTimer.Start();
             } else
@@ -52,11 +69,20 @@ namespace MirrorFakePerson
 
         private void BgCaptureTimerTick(object sender, EventArgs e)
         {
+            if (!IsWindows11())
+                return;
+
+            if (BgCaptureTimer != null)
+            {
+                BgCaptureTimer.Interval = 50;
+            }
+
             Bitmap formScreenshot = ScreenshotForm();
 
             Color titleBarColor = formScreenshot.GetPixel(formScreenshot.Width / 2, 9);
 
-            if (titleBarColor.R + titleBarColor.G + titleBarColor.B >= 720)
+            // Only capture light colors
+            if (titleBarColor.R + titleBarColor.G + titleBarColor.B >= 700)
             {
                 Form.BackColor = titleBarColor;
 
@@ -66,6 +92,18 @@ namespace MirrorFakePerson
                     BgCaptureTimer.Dispose();
                 }
             }
+
+            // Prevent an infinite loop where no valid color is sampled
+            if (AttemptCounter >= 50)
+            {
+                if (BgCaptureTimer != null)
+                {
+                    BgCaptureTimer.Stop();
+                    BgCaptureTimer.Dispose();
+                }
+            }
+
+            AttemptCounter += 1;
         }
     }
 }
