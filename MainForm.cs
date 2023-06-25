@@ -3,9 +3,10 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
-namespace MirrorFakePerson
+namespace MirrorFace
 {
     public partial class MainForm : Form
     {
@@ -16,6 +17,8 @@ namespace MirrorFakePerson
             Mica = new SimulatedMica(this);
 
             sourceImage.AllowDrop = true;
+
+            Text = Application.ProductName;
 
             // Disable controls that don't work with no image loaded
             copyOriginalToClipboardToolStripMenuItem.Enabled = saveOriginalAsToolStripMenuItem.Enabled = copyMirrorLeftBtn.Enabled = saveMirrorLeftBtn.Enabled = copyMirrorRightBtn.Enabled = saveMirrorRightBtn.Enabled = editImageMenuButton.Enabled = centerPosTrack.Enabled = false;
@@ -32,7 +35,7 @@ namespace MirrorFakePerson
                 LoadImages();
             } catch (Exception ex)
             {
-                MessageBox.Show("Failed to load generated image.\nReason: " + ex.Message, "Mirror Fake Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to load generated image.\nReason: " + ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -50,7 +53,7 @@ namespace MirrorFakePerson
                 LoadImages();
             } else
             {
-                MessageBox.Show(this, "Error pasting image: Clipboard data is not an image.", "Mirror Fake Person", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(this, "Error pasting image: Clipboard data is not an image.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

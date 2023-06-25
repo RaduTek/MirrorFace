@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mirror Fake Person")]
+[assembly: AssemblyTitle("Mirror Face")]
 [assembly: AssemblyDescription("Half-mirrors an AI generated fake person")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RaduTek")]
-[assembly: AssemblyProduct("Mirror Fake Person")]
+[assembly: AssemblyProduct("Mirror Face")]
 [assembly: AssemblyCopyright("Copyright © RaduTek")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

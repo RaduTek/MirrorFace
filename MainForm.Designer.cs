@@ -1,5 +1,5 @@
 ﻿
-namespace MirrorFakePerson
+namespace MirrorFace
 {
     partial class MainForm
     {
@@ -436,7 +436,7 @@ namespace MirrorFakePerson
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(20, 15, 20, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mirror Fake Person";
+            this.Text = "MainForm";
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Shown += new System.EventHandler(this.MainForm_Shown);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace MirrorFakePerson
+namespace MirrorFace
 {
     static class Program
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace MirrorFakePerson
+namespace MirrorFace
 {
     partial class AboutDialog
     {
@@ -60,7 +60,7 @@ namespace MirrorFakePerson
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(482, 42);
             this.titleLabel.TabIndex = 2;
-            this.titleLabel.Text = "Mirror Fake Person";
+            this.titleLabel.Text = "Application Name";
             // 
             // versionLabel
             // 
@@ -105,7 +105,7 @@ namespace MirrorFakePerson
             // 
             // AppIcon
             // 
-            this.AppIcon.Image = global::MirrorFakePerson.Properties.Resources._96;
+            this.AppIcon.Image = global::MirrorFace.Properties.Resources._96;
             this.AppIcon.Location = new System.Drawing.Point(18, 18);
             this.AppIcon.Margin = new System.Windows.Forms.Padding(4);
             this.AppIcon.Name = "AppIcon";

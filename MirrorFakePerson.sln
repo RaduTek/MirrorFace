@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MirrorFakePerson", "MirrorFakePerson.csproj", "{25659506-0D6B-45D1-B23C-01CEEBAB17F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MirrorFace", "MirrorFace.csproj", "{25659506-0D6B-45D1-B23C-01CEEBAB17F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
