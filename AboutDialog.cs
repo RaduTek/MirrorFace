@@ -49,6 +49,16 @@ namespace MirrorFakePerson
             Mica.CaptureSetColor(true);
         }
 
+        private void AboutDialog_Activated(object sender, EventArgs e)
+        {
+            Mica.CaptureSetColor(true);
+        }
+
+        private void AboutDialog_Deactivate(object sender, EventArgs e)
+        {
+            Mica.CaptureSetColor(true);
+        }
+
         #endregion
     }
 }

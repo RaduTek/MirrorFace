@@ -136,6 +136,8 @@ namespace MirrorFakePerson
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Activated += new System.EventHandler(this.AboutDialog_Activated);
+            this.Deactivate += new System.EventHandler(this.AboutDialog_Deactivate);
             this.Load += new System.EventHandler(this.AboutDialog_Load);
             this.Shown += new System.EventHandler(this.AboutDialog_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.Icon)).EndInit();

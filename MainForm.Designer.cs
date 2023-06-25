@@ -437,7 +437,10 @@ namespace MirrorFakePerson
             this.Padding = new System.Windows.Forms.Padding(20, 15, 20, 15);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mirror Fake Person";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
+            this.Deactivate += new System.EventHandler(this.MainForm_Deactivate);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.BackColorChanged += new System.EventHandler(this.MainForm_BackColorChanged);
             this.layoutTable.ResumeLayout(false);
             this.layoutTable.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
