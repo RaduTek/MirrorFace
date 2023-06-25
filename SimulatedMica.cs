@@ -58,7 +58,7 @@ namespace MirrorFace
                 AttemptCounter = 0;
 
                 BgCaptureTimer.Tick += new EventHandler(BgCaptureTimerTick);
-                BgCaptureTimer.Interval = 150;
+                BgCaptureTimer.Interval = 100;
 
                 BgCaptureTimer.Start();
             } else

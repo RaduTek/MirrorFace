@@ -307,13 +307,11 @@ namespace MirrorFace
         private void MainForm_Activated(object sender, EventArgs e)
         {
             Mica.CaptureSetColor(true);
-            ForeColor = SystemColors.ControlText;
         }
 
         private void MainForm_Deactivate(object sender, EventArgs e)
         {
             Mica.CaptureSetColor(true);
-            ForeColor = SystemColors.GrayText;
         }
         private void MainForm_BackColorChanged(object sender, EventArgs e)
         {
