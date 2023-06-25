@@ -34,8 +34,8 @@ namespace MirrorFakePerson
             this.versionLabel = new System.Windows.Forms.Label();
             this.githubLink = new System.Windows.Forms.LinkLabel();
             this.noteLabel = new System.Windows.Forms.Label();
-            this.Icon = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Icon)).BeginInit();
+            this.AppIcon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // closeButton
@@ -103,16 +103,16 @@ namespace MirrorFakePerson
             this.noteLabel.Text = "Mirror images vertically, preferably AI generated faces.\r\nAI generated faces sour" +
     "ced from https://thispersondoesnotexist.com";
             // 
-            // Icon
+            // AppIcon
             // 
-            this.Icon.Image = global::MirrorFakePerson.Properties.Resources._96;
-            this.Icon.Location = new System.Drawing.Point(18, 18);
-            this.Icon.Margin = new System.Windows.Forms.Padding(4);
-            this.Icon.Name = "Icon";
-            this.Icon.Size = new System.Drawing.Size(72, 72);
-            this.Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Icon.TabIndex = 7;
-            this.Icon.TabStop = false;
+            this.AppIcon.Image = global::MirrorFakePerson.Properties.Resources._96;
+            this.AppIcon.Location = new System.Drawing.Point(18, 18);
+            this.AppIcon.Margin = new System.Windows.Forms.Padding(4);
+            this.AppIcon.Name = "AppIcon";
+            this.AppIcon.Size = new System.Drawing.Size(72, 72);
+            this.AppIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AppIcon.TabIndex = 7;
+            this.AppIcon.TabStop = false;
             // 
             // AboutDialog
             // 
@@ -121,7 +121,7 @@ namespace MirrorFakePerson
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(600, 237);
-            this.Controls.Add(this.Icon);
+            this.Controls.Add(this.AppIcon);
             this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.githubLink);
             this.Controls.Add(this.versionLabel);
@@ -140,7 +140,7 @@ namespace MirrorFakePerson
             this.Deactivate += new System.EventHandler(this.AboutDialog_Deactivate);
             this.Load += new System.EventHandler(this.AboutDialog_Load);
             this.Shown += new System.EventHandler(this.AboutDialog_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.Icon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AppIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,6 +153,6 @@ namespace MirrorFakePerson
         private System.Windows.Forms.Label versionLabel;
         private System.Windows.Forms.LinkLabel githubLink;
         private System.Windows.Forms.Label noteLabel;
-        private System.Windows.Forms.PictureBox Icon;
+        private System.Windows.Forms.PictureBox AppIcon;
     }
 }
